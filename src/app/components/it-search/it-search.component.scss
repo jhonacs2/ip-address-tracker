@@ -4,3 +4,39 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.it-container-search {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  gap: 2rem;
+}
+
+.it-text-ip {
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.it-container-input-ip {
+  width: 43%;
+  display: flex;
+}
+
+.it-container-input-text {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  letter-spacing: 1px;
+}
+
+.it-button-input-text {
+  background-color: black;
+  border: none;
+  padding: 1.2rem 2.4rem;
+}
