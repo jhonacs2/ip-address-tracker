@@ -26,7 +26,7 @@
 }
 
 .it-container-input-ip {
-  width: 43%;
+  width: 40%;
   display: flex;
 }
 
@@ -61,6 +61,7 @@
   position: absolute;
   bottom: 0;
   transform: translate(0px, 50%);
+  z-index: 500;
 }
 
 .it-text-title {
