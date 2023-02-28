@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IpGeolocationService } from '../../services/ip-geolocation.service';
 import { IpDetails } from '../../interfaces/ip-details.interface';
 import { first } from 'rxjs';
@@ -7,7 +7,7 @@ import { LeafletService } from '../../services/leaflet.service';
 @Component({
   selector: 'app-it-search',
   templateUrl: './it-search.component.html',
-  styleUrls: ['./it-search.component.scss']
+  encapsulation: ViewEncapsulation.None
 })
 export class ItSearchComponent implements OnInit {
 
@@ -18,7 +18,6 @@ export class ItSearchComponent implements OnInit {
   constructor( private _ipGeolocationService: IpGeolocationService,
                private _leafletService: LeafletService ) {
     this.htmlInputIp = {} as ElementRef;
-
   }
 
   ngOnInit(): void {
@@ -35,8 +34,7 @@ export class ItSearchComponent implements OnInit {
           location: value.location,
           isp: value.isp
         };
-
-
+        console.log(this.ipDetails);
       });
   }
 }

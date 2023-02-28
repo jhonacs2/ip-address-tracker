@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LeafletService } from '../../services/leaflet.service';
 import { LatLngExpression } from 'leaflet';
 
 @Component({
   selector: 'app-it-map',
   templateUrl: './it-map.component.html',
-  styleUrls: ['./it-map.component.scss']
+  encapsulation: ViewEncapsulation.None
 })
 export class ItMapComponent implements AfterViewInit {
   @ViewChild('htmlDivMap') public htmlContainerMap: ElementRef | undefined;

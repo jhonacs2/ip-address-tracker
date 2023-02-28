@@ -1,4 +1,4 @@
-@import "./src/assets/it-global-variables";
+@import "../../it-global-variables";
 
 .it-section-search {
   background-image: url("/assets/images/pattern-bg-desktop.png");
@@ -41,6 +41,11 @@
   border-bottom-left-radius: 1rem;
 }
 
+
+.it-container-input-text:focus {
+  outline: 3px solid $very-dark-gray;
+}
+
 .it-button-input-text {
   background-color: $very-dark-gray;
   border: none;
@@ -60,9 +65,10 @@
   padding: 3.5rem 3rem;
   border-radius: 2rem;
   position: absolute;
-  bottom: 0;
-  transform: translate(0px, 50%);
+  top: 0;
+  transform: translate(0px, 125%);
   z-index: 500;
+  transition: all 0.3s;
 }
 
 .it-text-title {
@@ -77,11 +83,95 @@
   letter-spacing: 1px;
 }
 
-.it-container-text-detail:not(:last-child){
+.it-container-text-detail:not(:last-child) {
   border-right: 1.6px solid hsla(0, 0%, 59%, 0.56);;
 }
 
 .it-text-details {
   font-size: 2.4rem;
   width: 70%;
+}
+
+@media (max-width: 70em) {
+  .it-container-input-text {
+    font-size: 1.5rem;
+  }
+
+  .it-container-details-ip {
+    max-width: 100rem;
+  }
+
+  .it-text-details {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 63em) {
+
+  .it-container-input-text {
+    font-size: 1.3rem;
+  }
+
+  .it-container-input-ip {
+    width: 60%;
+  }
+
+  .it-container-details-ip {
+    max-width: 79rem;
+    transform: translate(0px, 120%);
+  }
+
+  .it-text-title {
+    font-size: 1rem;
+  }
+
+  .it-text-details {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 51em) {
+  .it-container-details-ip {
+    transform: translate(0px, 80%);
+  }
+
+  .it-container-details-ip {
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  .it-container-text-detail:not(:last-child) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 41em) {
+
+
+  .it-container-input-ip {
+    width: 70%;
+  }
+}
+
+@media (max-width: 34em) {
+
+  .it-text-ip {
+    font-size: 2.5rem;
+  }
+
+  .it-container-input-ip {
+    width: 27rem;
+  }
+
+  .it-container-details-ip {
+    max-width: 27rem;
+    grid-template-columns: 1fr;
+    padding: 2rem 3rem;
+    transform: translate(0px, 52%);
+    text-align: center;
+  }
+
+  .it-text-details {
+    width: 100%;
+  }
 }
