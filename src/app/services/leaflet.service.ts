@@ -16,12 +16,15 @@ export class LeafletService {
   private _iconMap: Icon | undefined;
   private _marker: Marker | undefined;
   private _tileLayer: TileLayer | undefined;
+  private _idHtmlContainer: string;
 
   constructor() {
+    this._idHtmlContainer = '';
   }
 
   public initMapLeaflet( latLong: LatLngExpression, idElementHtml: string ): void {
-    this._map = L.map(idElementHtml).setView(latLong, 15);
+    this._idHtmlContainer = idElementHtml;
+    this._map = L.map(this._idHtmlContainer).setView(latLong, 15);
     this._tileLayer = L.tileLayer(this.URL_LAYER_GOOGLE, {
       maxZoom: 20,
       subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
@@ -32,9 +35,13 @@ export class LeafletService {
       iconAnchor: [20, 50],
       shadowUrl: this.URL_NAME_LOCATION_ICON,
     });
-    this._marker = L.marker(latLong, { icon: this._iconMap }).addTo(this._map);
   }
 
+  public updateMapLeaflet( latLong: LatLngExpression ): void {
+    this._marker?.remove();
+    this._map?.setView(latLong);
+    this._marker = L.marker(latLong, { icon: this._iconMap }).addTo(this._map!);
+  }
 
 
 }

@@ -3,7 +3,12 @@
     <h1 class="it-text-ip">IP Address Tracker</h1>
 
     <div class="it-container-input-ip">
-      <input class="it-container-input-text" type="text" placeholder="Search for any IP address or domain">
+      <input class="it-container-input-text"
+             type="text"
+             (keyup.enter) = searchIpAddress()
+             placeholder="Search for any IP address or domain"
+             #htmlInputIp>
+
       <button type="button" class="it-button-input-text" title="search ip">
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
           <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6"/>
@@ -11,25 +16,27 @@
       </button>
     </div>
 
-    <div class="it-container-details-ip">
-      <div class="it-container-text-detail">
+    <div class="it-container-details-ip " *ngIf="ipDetails">
+      <div class="it-container-text-detail animate__bounceIn">
         <p class="it-text-title">ip address</p>
-        <p class="it-text-details">192.168.0.1</p>
+        <p class="it-text-details">{{ipDetails.ipAddress}}</p>
       </div>
 
-      <div class="it-container-text-detail">
+      <div class="it-container-text-detail animate__bounceIn">
         <p class="it-text-title">Location</p>
-        <p class="it-text-details">192.168.0.1</p>
+        <p class="it-text-details">
+          {{ipDetails.location.country}}, {{ipDetails.location.city}} {{ipDetails.location.postalCode}}
+        </p>
       </div>
 
-      <div class="it-container-text-detail">
+      <div class="it-container-text-detail animate__bounceIn">
         <p class="it-text-title">Time Zone</p>
-        <p class="it-text-details">192.168.0.1</p>
+        <p class="it-text-details">UTC {{ipDetails.location.timezone}}</p>
       </div>
 
-      <div class="it-container-text-detail">
+      <div class="it-container-text-detail animate__bounceIn">
         <p class="it-text-title">ISP</p>
-        <p class="it-text-details">192.168.0.1</p>
+        <p class="it-text-details">{{ipDetails.isp}}</p>
       </div>
     </div>
   </div>
