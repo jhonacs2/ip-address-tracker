@@ -34,7 +34,6 @@ export class ItSearchComponent implements OnInit {
           location: value.location,
           isp: value.isp
         };
-        console.log(this.ipDetails);
       });
   }
 }

@@ -10,7 +10,7 @@ export class LeafletService {
 
   private readonly URL_LAYER_GOOGLE = 'http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
   private readonly URL_LOCATION_ICON = './assets/svg/icon-location.svg';
-  private readonly URL_NAME_LOCATION_ICON = 'icon-location.svg';
+  private readonly URL_NAME_LOCATION_ICON = './assets/svg/icon-location.svg';
 
   private _map: Map | undefined;
   private _iconMap: Icon | undefined;
